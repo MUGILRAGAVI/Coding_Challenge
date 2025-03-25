@@ -140,10 +140,10 @@ where customerID = 6 and endDate >  getdate();
 
 --Find all payments made by a customer with a specific phone number.
 
-select p. * from Payment p
+select p.* from Payment p
 join Lease l on p.leaseID = l.leaseID
 join Customer c on l.customerID = c.customerID
-where c.phoneNumber ='555-234-5678';
+where c.phoneNumber = '555-765-4321'
 
 --Calculate the average daily rate of all available cars
 
@@ -207,6 +207,8 @@ FROM Lease l
 JOIN Customer c ON l.customerID = c.customerID
 JOIN Vehicle v ON l.vehicleID = v.vehicleID
 WHERE l.endDate > GETDATE(); 
+ 
+ select * from Lease
 
 --Find the Customer Who Has Spent the Most on Leases
 
@@ -219,6 +221,8 @@ ORDER BY totalSpent DESC;
 
 --List All Cars with Their Current Lease Information.
 
-SELECT v.*, l.* FROM Vehicle v
-LEFT JOIN Lease l ON v.vehicleID = l.vehicleID
-WHERE l.endDate > GETDATE(); 
+select v.*, l.*, c.firstName, c.lastName
+from Vehicle v
+join Lease l ON v.vehicleID = l.vehicleID 
+join Customer c ON l.customerID = c.customerID;
+
