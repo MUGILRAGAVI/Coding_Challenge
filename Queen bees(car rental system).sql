@@ -98,7 +98,7 @@ insert into Payment (leaseID, paymentDate, amount) VALUES
 
 select * from Payment
 
---Update the daily rate for a Mercedes car to 68.
+-- Update the daily rate for a Mercedes car to 68.
  
  update Vehicle 
  set dailyRate = 68
