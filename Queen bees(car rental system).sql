@@ -106,7 +106,7 @@ select * from Payment
 
  select * from Vehicle
 
- --Delete a specific customer and all associated leases and payments.
+ --Delete a specific customer and all associated  leases and payments.
 
  declare @customerID int=1;
  delete from Payment
